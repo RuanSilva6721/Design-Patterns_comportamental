@@ -2,13 +2,12 @@
 namespace Ruan\DP;
 
 use Ruan\DP\Stage\EmAprovacao;
-use Ruan\DP\Stage\EstadoOrcamento;
 
 class Orcamento {
-    public float $valor;
-    public int $qtdItens;
+    public $valor;
+    public $qtdItens;
 
-    public EstadoOrcamento $estadoAtual ;
+    public $estadoAtual;
 
     public function __construct(){
         $this->estadoAtual =  new EmAprovacao();
