@@ -20,4 +20,5 @@ $pedido->dataFinalizacao = new \DateTimeImmutable();
 $pedido->nomeCliente = $nomeCliente;
 $pedido->orcamento = $orcamento;
 
+echo "Nome: ".$pedido->nomeCliente." orcamento: ".$valorOrcamento." quantidade de itens: ". $numeroDeItens. PHP_EOL;
 echo "Criar Pedido";
