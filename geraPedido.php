@@ -1,6 +1,7 @@
-<?php 
-use Ruan\DP\Orcamento;
-use Ruan\DP\Pedido;
+<?php
+
+use Ruan\DP\GerarPedido;
+
 
 require "vendor/autoload.php";
 
@@ -9,16 +10,5 @@ $numeroDeItens = $argv[2];
 $nomeCliente = $argv[3];
 
 
-
-$orcamento = new Orcamento();
-
-$orcamento->qtdItens = $numeroDeItens;
-$orcamento->valor =  $valorOrcamento;
-
-$pedido = new Pedido();
-$pedido->dataFinalizacao = new \DateTimeImmutable();
-$pedido->nomeCliente = $nomeCliente;
-$pedido->orcamento = $orcamento;
-
-echo "Nome: ".$pedido->nomeCliente." orcamento: ".$valorOrcamento." quantidade de itens: ". $numeroDeItens. PHP_EOL;
-echo "Criar Pedido";
+$gerarPedido= new GerarPedido($valorOrcamento, $numeroDeItens, $nomeCliente);
+$gerarPedido->execute();
