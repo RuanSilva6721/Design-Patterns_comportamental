@@ -1,5 +1,8 @@
 <?php
 namespace Ruan\DP;
+
+use Ruan\DP\Actions\CriarPedido;
+
 class GerarPedido implements Command {
     private $valorOrcamento; 
     private $numeroDeItens;
@@ -20,9 +23,9 @@ class GerarPedido implements Command {
         $pedido->dataFinalizacao = new \DateTimeImmutable();
         $pedido->nomeCliente = $this->nomeCliente;
         $pedido->orcamento = $orcamento;
-
-        echo "Nome: ".$pedido->nomeCliente." orcamento: ".$this->valorOrcamento." quantidade de itens: ". $this->numeroDeItens. PHP_EOL;
-        echo "Criar Pedido";
+        
+        $CriarPedido = new CriarPedido();
+        $CriarPedido->executandoAcao($pedido);
 
     }
 }
